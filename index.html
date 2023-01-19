@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>code editor</title>
+</head>
+<body>
+    <div class="editor">
+        <textarea id="html-code"></textarea>
+        <textarea id="css-code"></textarea>
+        <textarea id="js-code"></textarea>
+        <iframe id="output"></iframe>
+    </div>
+    <script type ="text/javascript">
+        function run(){
+            let htmlcode=document.queryselector(".editoe #html-code").value;
+            let csscode="<style>"+document.queryselector(".editor #css-code").value+"<style>";
+            let jscode=<document.queryselector(".editor #js-code").value; 
+            let output=document.queryselector(".editor #output");
+            //console.log(htmlcode,csscode,jscode,output);
+            output.contentdocument.body.innerhtml=htmlcode+csscode;
+            output.contentwindow.eval(jscode);
+            }
+        document.queryselector(".editor #html-code").addeventlistener("keyup",run);
+        document.queryselector(".editor #css-code").addeventlistener("keyup",run);
+        document.queryselector(".editor #js-code").addeventlistener("keyup",run);
+    
+       
+    </script>
+    
+</body>
+</html>
